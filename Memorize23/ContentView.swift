@@ -4,18 +4,44 @@
 //
 //  Created by Dr. Andreas Plagens on 19.08.23.
 //
+//  This is the Memorize game as demonstrated in the CS193P lectures of Spring 2023
+//  (see https://cs193p.sites.stanford.edu )
+//
+//  NOTE: other than in the lecture, Xcode 15 beta / Swift 5.8 / iOS 17.0 beta was used here
+//
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        HStack {
+            CardView(isFaceUp: true)
+            CardView()
+            CardView()
+            CardView()
         }
+        .foregroundColor(.orange)
         .padding()
+    }
+}
+
+struct CardView: View {
+    
+    var isFaceUp: Bool = false
+    
+    var body: some View {
+        ZStack(content: {
+            if isFaceUp {
+                RoundedRectangle(cornerRadius: 12)
+                    .foregroundColor(.white)
+                RoundedRectangle(cornerRadius: 12)
+                    .strokeBorder(lineWidth: 2)
+                Text("👻").font(.largeTitle)
+            } else {
+                RoundedRectangle(cornerRadius: 12)
+            }
+            
+        })
     }
 }
 
