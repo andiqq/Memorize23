@@ -14,42 +14,72 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let emojis = ["👻","🎃","🕷️","😈","💀","🕸️","🧙‍♀️","🙀","👹","😱","☠️","🍭"]
-    
-    @State var cardCount: Int = 4
+    @State var symbols: [String] = []
+    @State var themeColor: Color = .clear
+    @State var numberOfCards: Int = 0
     
     var body: some View {
         VStack {
-            Text("Memorize !")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-            
-            ScrollView {
-                cards
-            }
+            title
+            ScrollView { cards }
             Spacer()
-            
+            themeChosingButtons
         }
         .padding()
     }
     
+    var title: some View {
+        Text("Memorize !")
+            .font(.largeTitle)
+            .fontWeight(.heavy)
+    }
+    
     var cards: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))]) {
-            ForEach (0..<cardCount, id: \.self) { index in
-                CardView(content: emojis[index])
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: CGFloat(320 / sqrt(Double(numberOfCards)*1.4+1))))]) {
+            ForEach (0..<numberOfCards, id: \.self) { index in
+                CardView(content: symbols[index])
                     .aspectRatio(2/3, contentMode: .fit)
             }
         }
-        .foregroundColor(.orange)
+        .foregroundColor(themeColor)
     }
-
+    
+    var themeChosingButtons: some View {
+        HStack(alignment: .bottom) {
+            themeChosingButton(theme: animals)
+            Spacer()
+            themeChosingButton(theme: sports)
+            Spacer()
+            themeChosingButton(theme: food)
+        }
+    }
+    
+    func themeChosingButton(theme: theme) -> some View {
+        Button(
+            action: {
+                let numberOfPairs = Int.random(in: 2...theme.symbols.count)
+                symbols = Array(theme.symbols.prefix(numberOfPairs))
+                symbols = (symbols + symbols).shuffled()
+                themeColor = theme.color
+                numberOfCards = symbols.count
+            },
+            label: {
+                VStack {
+                    Image(systemName: theme.icon)
+                    Text(theme.textDescription).font(.subheadline)
+                }
+            } )
+        .font(.largeTitle)
+        .imageScale(.large)
+        .foregroundColor(theme.color)
+    }
 }
 
 struct CardView: View {
     
     let content: String
     
-    @State var isFaceUp: Bool = true
+    @State var isFaceUp: Bool = false
     
     var body: some View {
         ZStack {
