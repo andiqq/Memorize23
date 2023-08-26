@@ -14,6 +14,31 @@ import SwiftUI
 
 struct ContentView: View {
     
+    struct theme {
+        var symbols: [String]
+        var color: Color
+        var icon: String
+        var textDescription: String
+    }
+
+    let animals = theme(
+        symbols: ["🐌","🐞","🐳","🐅","🦣","🦧","🦏","🦒","🦘","🐄"],
+        color: .brown,
+        icon: "pawprint.fill",
+        textDescription: "Animals")
+
+    let sports = theme(
+        symbols: ["⚽️","🥎","🏈","🏀","🏸","🥊","⛷️","🏋️‍♀️","🏄","🧗‍♂️","🚴"],
+        color: .blue,
+        icon: "sportscourt.fill",
+        textDescription: "Sports")
+
+    let food = theme(
+        symbols: ["🍎","🍊","🥯","🥨","🍔","🌮","🥫","🧁","🍪","🍩","🍰","🍝","🌯"],
+        color: .purple,
+        icon: "fork.knife",
+        textDescription: "Food")
+    
     @State var symbols: [String] = []
     @State var themeColor: Color = .clear
     @State var numberOfCards: Int = 0
@@ -58,7 +83,7 @@ struct ContentView: View {
         Button(
             action: {
                 let numberOfPairs = Int.random(in: 2...theme.symbols.count)
-                symbols = Array(theme.symbols.prefix(numberOfPairs))
+                symbols = Array(theme.symbols.shuffled().prefix(numberOfPairs))
                 symbols = (symbols + symbols).shuffled()
                 themeColor = theme.color
                 numberOfCards = symbols.count
