@@ -13,7 +13,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+      
     struct theme {
         var symbols: [String]
         var color: Color
