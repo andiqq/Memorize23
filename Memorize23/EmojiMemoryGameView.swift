@@ -17,12 +17,18 @@ struct EmojiMemoryGameView: View {
     
     var body: some View {
         VStack {
+            Text(viewModel.theme.name)
+                .font(.title)
+                .fontWeight(.semibold)
+                .foregroundColor(getColor(themeColor: viewModel.theme.color))
+                
             ScrollView {
                 cards
                     .animation(.default, value: viewModel.cards)
             }
             Button("New Game") { viewModel.newGame() }
-            Spacer()
+                .padding(.bottom, -20.0)
+                .padding(.top, 10)
         }
         .padding()
     }
@@ -42,7 +48,6 @@ struct EmojiMemoryGameView: View {
     }
     
     func getColor(themeColor: String) -> Color {
-        print(themeColor)
         switch themeColor {
         case "yellow": return .yellow
         case "brown": return .brown
