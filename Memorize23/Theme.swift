@@ -9,18 +9,18 @@ import Foundation
 
 struct Theme {
     let name: String
-    let emojis: [String]
+    var emojis: [String]
     let numberOfPairs: Int
     let color: String
 }
 
 let themes: [Theme] = [
-    Theme(name: "Halloween", emojis: HalloweenEmojis.shuffled(), numberOfPairs: 10, color: "violet"),
-    Theme(name: "Smileys", emojis: SmileyEmojis.shuffled(), numberOfPairs: 8, color: "yellow"),
-    Theme(name: "Animal Faces", emojis: AnimalFaceEmojis.shuffled(), numberOfPairs: 10, color: "brown"),
-    Theme(name: "Animals", emojis: AnimalEmojis.shuffled(), numberOfPairs: 9, color: "pink"),
-    Theme(name: "Fruits", emojis: FruitEmojis.shuffled(), numberOfPairs: 7, color: "red"),
-    Theme(name: "Food", emojis: FoodEmojis.shuffled(), numberOfPairs: 8, color: "orange")
+    Theme(name: "Halloween", emojis: HalloweenEmojis, numberOfPairs: 10, color: "violet"),
+    Theme(name: "Smileys", emojis: SmileyEmojis, numberOfPairs: 8, color: "yellow"),
+    Theme(name: "Animal Faces", emojis: AnimalFaceEmojis, numberOfPairs: 10, color: "brown"),
+    Theme(name: "Animals", emojis: AnimalEmojis, numberOfPairs: 9, color: "pink"),
+    Theme(name: "Fruits", emojis: FruitEmojis, numberOfPairs: 7, color: "red"),
+    Theme(name: "Food", emojis: FoodEmojis, numberOfPairs: 8, color: "orange")
 ]
 
 let HalloweenEmojis = ["👻","🎃","🕷️","😈","💀","🕸️","🧙‍♀️","🙀","👹","😱","☠️","🍭"]

@@ -9,9 +9,9 @@ import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
     
-    private static func createMemoryGame(theme: Theme) -> MemoryGame<String> {
+    private static func createMemoryGame(theme: Theme, usedEmojis: [String]) -> MemoryGame<String> {
         MemoryGame(numberOfPairsOfCards: theme.numberOfPairs) { pairIndex in
-            if theme.emojis.indices.contains(pairIndex) { return theme.emojis[pairIndex] }
+            if usedEmojis.indices.contains(pairIndex) { return usedEmojis[pairIndex] }
             else { return "⁉️" }
         }
     }
@@ -20,18 +20,22 @@ class EmojiMemoryGame: ObservableObject {
         
     var cards: Array<MemoryGame<String>.Card> { model.cards }
     
+    var usedEmojis: [String]
+    
     var theme: Theme
     
     init() {
         theme = themes.randomElement()!
-        model = EmojiMemoryGame.createMemoryGame(theme: theme)
+        usedEmojis = theme.emojis.shuffled()
+        model = EmojiMemoryGame.createMemoryGame(theme: theme, usedEmojis: usedEmojis)
     }
     
     // MARK: - Intents
     
     func newGame() {
         theme = themes.randomElement()!
-        model = EmojiMemoryGame.createMemoryGame(theme: theme)
+        usedEmojis = theme.emojis.shuffled()
+        model = EmojiMemoryGame.createMemoryGame(theme: theme, usedEmojis: usedEmojis)
     }
     
     func choose(_ card: MemoryGame<String>.Card) {
