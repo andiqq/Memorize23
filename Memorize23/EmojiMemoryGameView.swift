@@ -14,16 +14,15 @@ import SwiftUI
 
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
-      
+    
     var body: some View {
         VStack {
             ScrollView {
                 cards
                     .animation(.default, value: viewModel.cards)
             }
-            Button("Shuffle") {
-                viewModel.shuffle()
-            }
+            Button("New Game") { viewModel.newGame() }
+            Spacer()
         }
         .padding()
     }
@@ -39,9 +38,20 @@ struct EmojiMemoryGameView: View {
                     }
             }
         }
-        .foregroundColor(.orange)
+        .foregroundColor(getColor(themeColor: EmojiMemoryGame().theme.color))
     }
-      
+    
+    func getColor(themeColor: String) -> Color {
+        switch themeColor {
+        case "yellow": return .yellow
+        case "brown": return .brown
+        case "pink": return .pink
+        case "red": return .red
+        case "orange": return .orange
+        default: return .purple
+        }
+    }
+    
 }
 
 struct CardView: View {
@@ -64,6 +74,7 @@ struct CardView: View {
                     .aspectRatio(1, contentMode: .fit)
             }
             .opacity(card.isFaceUp ? 1 : 0)
+            
             base.fill()
                 .opacity(card.isFaceUp ? 0 : 1)
         }
