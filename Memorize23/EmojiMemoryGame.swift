@@ -30,7 +30,7 @@ class EmojiMemoryGame: ObservableObject {
     
     init() {
         repeat {
-            theme = themes.randomElement() ?? themes[0]
+            theme = themes.randomElement()!
         } while theme.emojis.count < 2
         model = EmojiMemoryGame.createMemoryGame(theme: theme)
     }
@@ -39,10 +39,9 @@ class EmojiMemoryGame: ObservableObject {
     
     func newGame() {
         repeat {
-            theme = themes.randomElement() ?? themes[0]
+            theme = themes.randomElement()!
         } while theme.emojis.count < 2
         model = EmojiMemoryGame.createMemoryGame(theme: theme)
-        print(cards)
     }
     
     func choose(_ card: MemoryGame<String>.Card) {
