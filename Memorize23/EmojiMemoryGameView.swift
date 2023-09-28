@@ -38,10 +38,11 @@ struct EmojiMemoryGameView: View {
                     }
             }
         }
-        .foregroundColor(getColor(themeColor: EmojiMemoryGame().theme.color))
+        .foregroundColor(getColor(themeColor: viewModel.theme.color))
     }
     
     func getColor(themeColor: String) -> Color {
+        print(themeColor)
         switch themeColor {
         case "yellow": return .yellow
         case "brown": return .brown
