@@ -14,7 +14,7 @@ struct Theme {
     let color: String
 }
 
-let themes: [Theme] = [
+let themes = [
     Theme(name: "Halloween", emojis: HalloweenEmojis, numberOfPairs: 16, color: "violet"),
     Theme(name: "Smileys", emojis: SmileyEmojis, numberOfPairs: 8, color: "yellow"),
     Theme(name: "Animal Faces", emojis: AnimalFaceEmojis, numberOfPairs: 10, color: "brown"),

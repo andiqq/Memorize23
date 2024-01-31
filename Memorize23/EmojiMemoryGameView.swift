@@ -7,7 +7,7 @@
 //  This is the Memorize game as demonstrated in the CS193P lectures of Spring 2023
 //  (see https://cs193p.sites.stanford.edu )
 //
-//  NOTE: other than in the lecture, Xcode 15 beta / Swift 5.8 / iOS 17.0 beta was used here
+//  NOTE: other than in the lecture, Xcode 15 / Swift 5.9 / iOS 17 was used here
 //
 
 import SwiftUI
@@ -44,7 +44,6 @@ struct EmojiMemoryGameView: View {
                     }
             }
         }
-        .foregroundColor(getColors(themeColor: viewModel.theme.color)[0])
     }
     
 }
@@ -84,10 +83,10 @@ struct CardView: View {
 func getColors(themeColor: String) -> [Color] {
     switch themeColor {
     case "yellow": return [.yellow, .orange]
-    case "brown": return [.brown]
-    case "pink": return [.pink, .orange]
+    case "brown": return [.brown, .black, .brown]
+    case "pink": return [.pink]
     case "redblue": return [.red, .blue]
-    case "orange": return [.orange]
+    case "orange": return [.orange, .yellow, .orange]
     default: return [.purple, .black]
     }
 }
