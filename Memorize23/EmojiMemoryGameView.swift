@@ -20,7 +20,7 @@ struct EmojiMemoryGameView: View {
             Text(viewModel.theme.name)
                 .font(.title)
                 .fontWeight(.semibold)
-                .foregroundColor(getColor(themeColor: viewModel.theme.color))
+                .foregroundColor(getColors(themeColor: viewModel.theme.color)[0])
                 
             ScrollView {
                 cards
@@ -36,7 +36,7 @@ struct EmojiMemoryGameView: View {
     var cards: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 85), spacing: 0)], spacing: 0) {
             ForEach (viewModel.cards) { card in
-                CardView(card)
+                CardView(card, colors: viewModel.theme.color)
                     .aspectRatio(2/3, contentMode: .fit)
                     .padding(4)
                     .onTapGesture {
@@ -44,18 +44,7 @@ struct EmojiMemoryGameView: View {
                     }
             }
         }
-        .foregroundColor(getColor(themeColor: viewModel.theme.color))
-    }
-    
-    func getColor(themeColor: String) -> Color {
-        switch themeColor {
-        case "yellow": return .yellow
-        case "brown": return .brown
-        case "pink": return .pink
-        case "red": return .red
-        case "orange": return .orange
-        default: return .purple
-        }
+        .foregroundColor(getColors(themeColor: viewModel.theme.color)[0])
     }
     
 }
@@ -64,8 +53,11 @@ struct CardView: View {
     
     let card: MemoryGame<String>.Card
     
-    init(_ card: MemoryGame<String>.Card) {
+    let colors: [Color]
+    
+    init(_ card: MemoryGame<String>.Card, colors: String) {
         self.card = card
+        self.colors = getColors(themeColor: colors)
     }
     
     var body: some View {
@@ -73,7 +65,8 @@ struct CardView: View {
             let base = RoundedRectangle(cornerRadius: 12)
             Group {
                 base.foregroundColor(.white)
-                base.strokeBorder(lineWidth: 2)
+                base.strokeBorder(Gradient(colors: colors), lineWidth: 2)
+
                 Text(card.content)
                     .font(.system(size: 200))
                     .minimumScaleFactor(0.01)
@@ -81,10 +74,21 @@ struct CardView: View {
             }
             .opacity(card.isFaceUp ? 1 : 0)
             
-            base.fill()
+            base.fill(Gradient(colors: colors))
                 .opacity(card.isFaceUp ? 0 : 1)
         }
         .opacity(card.isFaceUp || !card.isMatched ? 1 : 0)
+    }
+}
+
+func getColors(themeColor: String) -> [Color] {
+    switch themeColor {
+    case "yellow": return [.yellow, .orange]
+    case "brown": return [.brown]
+    case "pink": return [.pink, .orange]
+    case "redblue": return [.red, .blue]
+    case "orange": return [.orange]
+    default: return [.purple, .black]
     }
 }
 
