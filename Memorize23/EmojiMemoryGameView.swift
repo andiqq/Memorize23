@@ -34,9 +34,16 @@ struct EmojiMemoryGameView: View {
             }
         }
         .animation(.default, value: viewModel.cards)
+        
+        Spacer()
 
-        Button("New Game") { viewModel.newGame() }
-            .padding(5)
+        HStack {
+            Button("New Game") { viewModel.newGame() }
+                .padding(5)
+            Spacer()
+            Text("Score: \(viewModel.score)")
+        }
+        .padding(.horizontal)
     }
 }
 

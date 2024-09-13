@@ -8,8 +8,13 @@
 import Foundation
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
+    
     private(set) var cards: [Card]
-
+    
+    var score = 0
+    let penalty = 1
+    let award = 2
+    
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = []
         // add numberOfPairsOfCards x 2 cards
@@ -21,7 +26,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         shuffle()
     }
 
-    var indexOfTheOneAndOnlyFaceUpCard: Int? {
+    private var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { index in cards[index].isFaceUp }.only }
         set { cards.indices.forEach { cards[$0].isFaceUp = (newValue == $0) } }
     }
@@ -31,8 +36,18 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             if !cards[chosenIndex].isFaceUp && !cards[chosenIndex].isMatched {
                 if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
                     if cards[chosenIndex].content == cards[potentialMatchIndex].content {
+                        score += award
                         cards[chosenIndex].isMatched = true
                         cards[potentialMatchIndex].isMatched = true
+                    } else {
+                        if cards[chosenIndex].alreadyBeenSeen {
+                            score -= penalty
+                        }
+                        if cards[potentialMatchIndex].alreadyBeenSeen {
+                            score -= penalty
+                        }
+                        cards[chosenIndex].alreadyBeenSeen = true
+                        cards[potentialMatchIndex].alreadyBeenSeen = true
                     }
                 } else {
                     for index in cards.indices {
@@ -51,6 +66,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     struct Card: Equatable, Identifiable, CustomDebugStringConvertible {
         var isFaceUp = false
         var isMatched = false
+        var alreadyBeenSeen = false
         let content: CardContent
 
         var id: String

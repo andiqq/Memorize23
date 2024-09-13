@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CardView: View {
 
-    let card: MemoryGame<String>.Card
+    private let card: MemoryGame<String>.Card
 
-    let colors: [Color]
+    private let colors: [Color]
 
     init(_ card: MemoryGame<String>.Card, colors: String) {
         self.card = card
