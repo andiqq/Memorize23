@@ -14,6 +14,7 @@
 		E19CB8B02A9A7F6700B74938 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CB8AF2A9A7F6700B74938 /* MemoryGame.swift */; };
 		E19CB8B22A9A814E00B74938 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CB8B12A9A814E00B74938 /* EmojiMemoryGame.swift */; };
 		E1CB02332ABF28FB007674EA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CB02322ABF28FB007674EA /* Theme.swift */; };
+		E1E2B1882C90AE020027B476 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2B1872C90ADF70027B476 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		E19CB8AF2A9A7F6700B74938 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		E19CB8B12A9A814E00B74938 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		E1CB02322ABF28FB007674EA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E1E2B1872C90ADF70027B476 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		E16D33122A90A4D50049DAA2 /* Memorize23 */ = {
 			isa = PBXGroup;
 			children = (
+				E1E2B1872C90ADF70027B476 /* CardView.swift */,
 				E16D33132A90A4D50049DAA2 /* Memorize23App.swift */,
 				E19CB8AF2A9A7F6700B74938 /* MemoryGame.swift */,
 				E1CB02322ABF28FB007674EA /* Theme.swift */,
@@ -150,6 +153,7 @@
 				E16D33142A90A4D50049DAA2 /* Memorize23App.swift in Sources */,
 				E1CB02332ABF28FB007674EA /* Theme.swift in Sources */,
 				E19CB8B02A9A7F6700B74938 /* MemoryGame.swift in Sources */,
+				E1E2B1882C90AE020027B476 /* CardView.swift in Sources */,
 				E19CB8B22A9A814E00B74938 /* EmojiMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
