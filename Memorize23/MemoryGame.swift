@@ -12,8 +12,12 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     private(set) var cards: [Card]
     
     var score = 0
-    let penalty = 1
-    let award = 2
+    let penalty = 100
+    var maxAward = 200
+    var timer = TimeInterval(0)
+    var adjust = 0.7
+    var minAward = 20
+    var decreasePerSecond = 20
     
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = []
@@ -32,11 +36,16 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
 
     mutating func choose(_ card: Card) {
+        if indexOfTheOneAndOnlyFaceUpCard == nil {
+            timer = Date().timeIntervalSince1970
+        }
         if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
             if !cards[chosenIndex].isFaceUp && !cards[chosenIndex].isMatched {
                 if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
                     if cards[chosenIndex].content == cards[potentialMatchIndex].content {
-                        score += award
+                        timer = timer - Date().timeIntervalSince1970
+                        score += max(maxAward + Int(timer + adjust) * decreasePerSecond, minAward)
+                        print(timer, Int(timer))
                         cards[chosenIndex].isMatched = true
                         cards[potentialMatchIndex].isMatched = true
                     } else {
