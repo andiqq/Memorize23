@@ -14,7 +14,7 @@ import SwiftUI
 
 struct EmojiMemoryGameView: View {
 
-    @ObservedObject var viewModel = EmojiMemoryGame()
+    @ObservedObject var viewModel: EmojiMemoryGame
 
     var body: some View {
 
@@ -24,9 +24,7 @@ struct EmojiMemoryGameView: View {
             .foregroundColor(Theme.getColors(themeColor: viewModel.theme.color)[0])
 
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 85), spacing: 0)], spacing: 0) {
-
             ForEach(viewModel.cards) { card in
-
                 CardView(card, colors: viewModel.theme.color)
                     .aspectRatio(2/3, contentMode: .fit)
                     .onTapGesture { viewModel.choose(card) }
@@ -40,6 +38,10 @@ struct EmojiMemoryGameView: View {
         HStack {
             Button("New Game") { viewModel.newGame() }
                 .padding(5)
+            Spacer()
+            viewModel.cards.count(where: { $0.isFaceUp}) == 1
+            ? Text(Date(), style: .timer)
+            : Text("0.00")
             Spacer()
             Text("Score: \(viewModel.score)")
         }
