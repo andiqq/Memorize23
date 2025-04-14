@@ -10,7 +10,7 @@ import SwiftUI
 class EmojiMemoryGame: ObservableObject {
 
     @Published private var model: MemoryGame<String>?
-    
+
     var score: Int { model!.score }
 
     var cards: [MemoryGame<String>.Card] { model!.cards }

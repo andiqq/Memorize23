@@ -32,7 +32,7 @@ struct EmojiMemoryGameView: View {
             }
         }
         .animation(.default, value: viewModel.cards)
-        
+
         Spacer()
 
         HStack {

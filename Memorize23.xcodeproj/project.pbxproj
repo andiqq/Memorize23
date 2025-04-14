@@ -62,9 +62,9 @@
 				E1E2B1872C90ADF70027B476 /* CardView.swift */,
 				E16D33132A90A4D50049DAA2 /* Memorize23App.swift */,
 				E19CB8AF2A9A7F6700B74938 /* MemoryGame.swift */,
-				E1CB02322ABF28FB007674EA /* Theme.swift */,
 				E19CB8B12A9A814E00B74938 /* EmojiMemoryGame.swift */,
 				E16D33152A90A4D50049DAA2 /* EmojiMemoryGameView.swift */,
+				E1CB02322ABF28FB007674EA /* Theme.swift */,
 				E16D33172A90A4DA0049DAA2 /* Assets.xcassets */,
 				E16D33192A90A4DA0049DAA2 /* Preview Content */,
 			);

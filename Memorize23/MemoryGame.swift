@@ -8,9 +8,9 @@
 import Foundation
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
-    
+
     private(set) var cards: [Card]
-    
+
     var score = 0
     let penalty = 100
     var maxAward = 200
@@ -18,7 +18,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     var adjust = 0.7
     var minAward = 20
     var decreasePerSecond = 20
-    
+
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = []
         // add numberOfPairsOfCards x 2 cards
@@ -43,7 +43,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             if !cards[chosenIndex].isFaceUp && !cards[chosenIndex].isMatched {
                 if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
                     if cards[chosenIndex].content == cards[potentialMatchIndex].content {
-                        timer = timer - Date().timeIntervalSince1970
+                        timer -= Date().timeIntervalSince1970
                         score += max(maxAward + Int(timer + adjust) * decreasePerSecond, minAward)
                         print(timer, Int(timer))
                         cards[chosenIndex].isMatched = true
