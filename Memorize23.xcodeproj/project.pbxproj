@@ -14,6 +14,9 @@
 		E16D331B2A90A4DA0049DAA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E16D331A2A90A4DA0049DAA2 /* Preview Assets.xcassets */; };
 		E19CB8B02A9A7F6700B74938 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CB8AF2A9A7F6700B74938 /* MemoryGame.swift */; };
 		E19CB8B22A9A814E00B74938 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CB8B12A9A814E00B74938 /* EmojiMemoryGame.swift */; };
+		E1CFE8F22DBCE9CA00FFCED9 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFE8F02DBCE9CA00FFCED9 /* Cardify.swift */; };
+		E1CFE8F32DBCE9CA00FFCED9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFE8F12DBCE9CA00FFCED9 /* CardView.swift */; };
+		E1CFE8F52DBCE9EC00FFCED9 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFE8F42DBCE9EC00FFCED9 /* Pie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		E16D331A2A90A4DA0049DAA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E19CB8AF2A9A7F6700B74938 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		E19CB8B12A9A814E00B74938 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
+		E1CFE8F02DBCE9CA00FFCED9 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		E1CFE8F12DBCE9CA00FFCED9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E1CFE8F42DBCE9EC00FFCED9 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +63,13 @@
 		E16D33122A90A4D50049DAA2 /* Memorize23 */ = {
 			isa = PBXGroup;
 			children = (
+				E1CFE8F42DBCE9EC00FFCED9 /* Pie.swift */,
 				E19CB8AF2A9A7F6700B74938 /* MemoryGame.swift */,
 				E19CB8B12A9A814E00B74938 /* EmojiMemoryGame.swift */,
 				E16D33132A90A4D50049DAA2 /* Memorize23App.swift */,
 				E16D33152A90A4D50049DAA2 /* EmojiMemoryGameView.swift */,
+				E1CFE8F02DBCE9CA00FFCED9 /* Cardify.swift */,
+				E1CFE8F12DBCE9CA00FFCED9 /* CardView.swift */,
 				E11417502DB55DE3009C310E /* AspectVGrid.swift */,
 				E16D33172A90A4DA0049DAA2 /* Assets.xcassets */,
 				E16D33192A90A4DA0049DAA2 /* Preview Content */,
@@ -148,6 +157,9 @@
 			files = (
 				E16D33162A90A4D50049DAA2 /* EmojiMemoryGameView.swift in Sources */,
 				E16D33142A90A4D50049DAA2 /* Memorize23App.swift in Sources */,
+				E1CFE8F52DBCE9EC00FFCED9 /* Pie.swift in Sources */,
+				E1CFE8F22DBCE9CA00FFCED9 /* Cardify.swift in Sources */,
+				E1CFE8F32DBCE9CA00FFCED9 /* CardView.swift in Sources */,
 				E19CB8B02A9A7F6700B74938 /* MemoryGame.swift in Sources */,
 				E11417512DB55DE3009C310E /* AspectVGrid.swift in Sources */,
 				E19CB8B22A9A814E00B74938 /* EmojiMemoryGame.swift in Sources */,
