@@ -17,6 +17,7 @@
 		E1CFE8F22DBCE9CA00FFCED9 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFE8F02DBCE9CA00FFCED9 /* Cardify.swift */; };
 		E1CFE8F32DBCE9CA00FFCED9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFE8F12DBCE9CA00FFCED9 /* CardView.swift */; };
 		E1CFE8F52DBCE9EC00FFCED9 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFE8F42DBCE9EC00FFCED9 /* Pie.swift */; };
+		E1CFE8F72DBD671C00FFCED9 /* FlyingNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFE8F62DBD671C00FFCED9 /* FlyingNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		E1CFE8F02DBCE9CA00FFCED9 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		E1CFE8F12DBCE9CA00FFCED9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E1CFE8F42DBCE9EC00FFCED9 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		E1CFE8F62DBD671C00FFCED9 /* FlyingNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,14 +65,15 @@
 		E16D33122A90A4D50049DAA2 /* Memorize23 */ = {
 			isa = PBXGroup;
 			children = (
-				E1CFE8F42DBCE9EC00FFCED9 /* Pie.swift */,
+				E16D33132A90A4D50049DAA2 /* Memorize23App.swift */,
 				E19CB8AF2A9A7F6700B74938 /* MemoryGame.swift */,
 				E19CB8B12A9A814E00B74938 /* EmojiMemoryGame.swift */,
-				E16D33132A90A4D50049DAA2 /* Memorize23App.swift */,
 				E16D33152A90A4D50049DAA2 /* EmojiMemoryGameView.swift */,
-				E1CFE8F02DBCE9CA00FFCED9 /* Cardify.swift */,
-				E1CFE8F12DBCE9CA00FFCED9 /* CardView.swift */,
 				E11417502DB55DE3009C310E /* AspectVGrid.swift */,
+				E1CFE8F02DBCE9CA00FFCED9 /* Cardify.swift */,
+				E1CFE8F42DBCE9EC00FFCED9 /* Pie.swift */,
+				E1CFE8F12DBCE9CA00FFCED9 /* CardView.swift */,
+				E1CFE8F62DBD671C00FFCED9 /* FlyingNumber.swift */,
 				E16D33172A90A4DA0049DAA2 /* Assets.xcassets */,
 				E16D33192A90A4DA0049DAA2 /* Preview Content */,
 			);
@@ -157,6 +160,7 @@
 			files = (
 				E16D33162A90A4D50049DAA2 /* EmojiMemoryGameView.swift in Sources */,
 				E16D33142A90A4D50049DAA2 /* Memorize23App.swift in Sources */,
+				E1CFE8F72DBD671C00FFCED9 /* FlyingNumber.swift in Sources */,
 				E1CFE8F52DBCE9EC00FFCED9 /* Pie.swift in Sources */,
 				E1CFE8F22DBCE9CA00FFCED9 /* Cardify.swift in Sources */,
 				E1CFE8F32DBCE9CA00FFCED9 /* CardView.swift in Sources */,
