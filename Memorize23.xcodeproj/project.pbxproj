@@ -65,15 +65,15 @@
 		E16D33122A90A4D50049DAA2 /* Memorize23 */ = {
 			isa = PBXGroup;
 			children = (
-				E16D33132A90A4D50049DAA2 /* Memorize23App.swift */,
 				E19CB8AF2A9A7F6700B74938 /* MemoryGame.swift */,
 				E19CB8B12A9A814E00B74938 /* EmojiMemoryGame.swift */,
 				E16D33152A90A4D50049DAA2 /* EmojiMemoryGameView.swift */,
-				E11417502DB55DE3009C310E /* AspectVGrid.swift */,
+				E1CFE8F12DBCE9CA00FFCED9 /* CardView.swift */,
 				E1CFE8F02DBCE9CA00FFCED9 /* Cardify.swift */,
 				E1CFE8F42DBCE9EC00FFCED9 /* Pie.swift */,
-				E1CFE8F12DBCE9CA00FFCED9 /* CardView.swift */,
 				E1CFE8F62DBD671C00FFCED9 /* FlyingNumber.swift */,
+				E11417502DB55DE3009C310E /* AspectVGrid.swift */,
+				E16D33132A90A4D50049DAA2 /* Memorize23App.swift */,
 				E16D33172A90A4DA0049DAA2 /* Assets.xcassets */,
 				E16D33192A90A4DA0049DAA2 /* Preview Content */,
 			);
